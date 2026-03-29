@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Text Summarizer Agent</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --bg:#0f0f13;
+    --surface:#1a1a24;
+    --surface2:#22222f;
+    --border:#2e2e3e;
+    --accent:#7c6af7;
+    --accent2:#a78bfa;
+    --text:#e8e8f0;
+    --muted:#8888a0;
+    --success:#34d399;
+    --radius:16px;
+  }
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px}
+  header{text-align:center;margin-bottom:40px;padding-top:20px}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,106,247,0.15);border:1px solid rgba(124,106,247,0.3);color:var(--accent2);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;margin-bottom:16px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+  h1{font-size:2.2rem;font-weight:600;background:linear-gradient(135deg,#e8e8f0,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+  .subtitle{color:var(--muted);font-size:0.95rem}
+  .container{width:100%;max-width:780px;display:flex;flex-direction:column;gap:20px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+  .card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:12px}
+  textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;padding:14px;resize:vertical;min-height:160px;outline:none;transition:border-color 0.2s;line-height:1.6}
+  textarea:focus{border-color:var(--accent)}
+  textarea::placeholder{color:var(--muted)}
+  .controls{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+  .sentences-control{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--muted)}
+  select{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:6px 10px;font-size:0.85rem;outline:none;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:all 0.2s;margin-left:auto}
+  .btn:hover{background:#6a58e0;transform:translateY(-1px)}
+  .btn:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+  .btn svg{transition:transform 0.3s}
+  .btn.loading svg{animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .result-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:none;animation:fadeIn 0.4s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .result-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+  .result-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--success)}
+  .copy-btn{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--muted);padding:6px 12px;font-size:12px;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+  .copy-btn:hover{color:var(--text);border-color:var(--accent)}
+  .result-text{font-size:0.95rem;line-height:1.75;color:var(--text);white-space:pre-wrap;font-family:'DM Sans',sans-serif}
+  .result-text strong{color:var(--accent2);font-weight:600}
+  .meta{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+  .meta-item{font-size:11px;color:var(--muted)}
+  .meta-item span{color:var(--text);font-weight:500}
+  .error-card{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:var(--radius);padding:16px;color:#f87171;font-size:0.9rem;display:none}
+  .examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .example-chip{background:var(--surface2);border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer;transition:all 0.2s;white-space:nowrap}
+  .example-chip:hover{border-color:var(--accent);color:var(--accent2)}
+  .history{display:flex;flex-direction:column;gap:10px}
+  .history-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;cursor:pointer;transition:all 0.2s}
+  .history-item:hover{border-color:var(--accent)}
+  .history-item p{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .history-item .h-time{font-size:11px;color:var(--accent);margin-bottom:4px}
+  footer{margin-top:40px;text-align:center;color:var(--muted);font-size:12px}
+  footer a{color:var(--accent2);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge"><span class="dot"></span> Powered by Gemini 2.0 Flash + ADK</div>
+  <h1>AI Text Summarizer</h1>
+  <p class="subtitle">Paste any text and get a concise AI-generated summary instantly</p>
+</header>
+
+<div class="container">
+
+  <!-- Input Card -->
+  <div class="card">
+    <div class="card-label">Input Text</div>
+    <textarea id="inputText" placeholder="Paste your article, paragraph, or any text here..."></textarea>
+
+    <div style="margin-top:10px">
+      <div class="card-label">Try an example</div>
+      <div class="examples">
+        <div class="example-chip" onclick="loadExample(0)">🌍 Climate Change</div>
+        <div class="example-chip" onclick="loadExample(1)">🤖 Artificial Intelligence</div>
+        <div class="example-chip" onclick="loadExample(2)">🚀 Space Exploration</div>
+        <div class="example-chip" onclick="loadExample(3)">💊 Healthcare</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="sentences-control">
+        <label>Summary length:</label>
+        <select id="maxSentences">
+          <option value="2">2 sentences</option>
+          <option value="3" selected>3 sentences</option>
+          <option value="5">5 sentences</option>
+          <option value="7">7 sentences</option>
+        </select>
+      </div>
+      <button class="btn" id="submitBtn" onclick="summarize()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Summarize
+      </button>
+    </div>
+  </div>
+
+  <!-- Error Card -->
+  <div class="error-card" id="errorCard"></div>
+
+  <!-- Result Card -->
+  <div class="result-card" id="resultCard">
+    <div class="result-header">
+      <div class="result-title">✦ Summary Ready</div>
+      <button class="copy-btn" onclick="copyResult()">Copy</button>
+    </div>
+    <div class="result-text" id="resultText"></div>
+    <div class="meta">
+      <div class="meta-item">Session: <span id="metaSession">—</span></div>
+      <div class="meta-item">Agent: <span>text_summarizer</span></div>
+      <div class="meta-item">Model: <span>gemini-2.0-flash</span></div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div id="historySection" style="display:none">
+    <div class="card-label" style="margin-bottom:10px">Recent Summaries</div>
+    <div class="history" id="historyList"></div>
+  </div>
+
+</div>
+
+<footer>
+  Built with <a href="https://google.github.io/adk-docs/" target="_blank">Google ADK</a> + 
+  <a href="https://deepmind.google/technologies/gemini/" target="_blank">Gemini</a> · 
+  Deployed on <a href="https://render.com" target="_blank">Render</a>
+</footer>
+
+<script>
+const examples = [
+  "Climate change is one of the most pressing challenges facing humanity today. Rising global temperatures, caused primarily by greenhouse gas emissions from human activities, are leading to more frequent and severe weather events, rising sea levels, and disruptions to ecosystems worldwide. Scientists warn that without significant reductions in carbon emissions, the planet could warm by more than 2 degrees Celsius above pre-industrial levels, triggering irreversible changes.",
+  "Artificial intelligence is transforming industries worldwide. From healthcare to finance, AI systems are being deployed to automate decisions, detect fraud, and accelerate drug discovery. Large language models can now write code, generate images, and hold complex conversations. Despite its promise, AI also raises concerns about job displacement, algorithmic bias, and the concentration of power among a handful of technology companies.",
+  "Space exploration has entered a new era with the rise of commercial spaceflight companies. SpaceX, Blue Origin, and Virgin Galactic are competing to make space more accessible, while NASA plans to return humans to the Moon through the Artemis program. Scientists are also searching for signs of life on Mars and studying the icy moons of Jupiter and Saturn, which may harbor conditions suitable for microbial life.",
+  "Modern healthcare is being revolutionized by advances in genomics, precision medicine, and digital health technologies. Wearable devices can now monitor heart rhythms, blood oxygen levels, and even detect early signs of disease. CRISPR gene editing holds promise for curing genetic disorders, while mRNA vaccine technology, proven effective during the COVID-19 pandemic, is being applied to cancer treatment and other diseases."
+];
+
+const history = [];
+
+function loadExample(i) {
+  document.getElementById('inputText').value = examples[i];
+}
+
+async function summarize() {
+  const text = document.getElementById('inputText').value.trim();
+  const maxSentences = document.getElementById('maxSentences').value;
+  const btn = document.getElementById('submitBtn');
+  const resultCard = document.getElementById('resultCard');
+  const errorCard = document.getElementById('errorCard');
+
+  if (!text) {
+    errorCard.textContent = 'Please enter some text to summarize.';
+    errorCard.style.display = 'block';
+    return;
+  }
+
+  errorCard.style.display = 'none';
+  resultCard.style.display = 'none';
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg> Summarizing...`;
+
+  try {
+    const res = await fetch('/run', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        message: `Summarize this in ${maxSentences} sentences: ${text}`
+      })
+    });
+
+    if (!res.ok) throw new Error(`Server error: ${res.status}`);
+    const data = await res.json();
+
+    // Format bold text
+    const formatted = data.response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    document.getElementById('resultText').innerHTML = formatted;
+    document.getElementById('metaSession').textContent = data.session_id.slice(0, 8) + '...';
+
+    resultCard.style.display = 'block';
+
+    // Add to history
+    history.unshift({ text: text.slice(0, 80) + '...', time: new Date().toLocaleTimeString(), response: data.response });
+    if (history.length > 5) history.pop();
+    renderHistory();
+
+  } catch (err) {
+    errorCard.textContent = 'Error: ' + err.message + '. Make sure your GOOGLE_API_KEY is set correctly.';
+    errorCard.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Summarize`;
+  }
+}
+
+function copyResult() {
+  const text = document.getElementById('resultText').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy', 2000);
+  });
+}
+
+function renderHistory() {
+  const section = document.getElementById('historySection');
+  const list = document.getElementById('historyList');
+  if (history.length === 0) { section.style.display = 'none'; return; }
+  section.style.display = 'block';
+  list.innerHTML = history.map(h => `
+    <div class="history-item" onclick="document.getElementById('inputText').value='${h.text.replace(/'/g,"\\'")}'" >
+      <div class="h-time">${h.time}</div>
+      <p>${h.text}</p>
+    </div>
+  `).join('');
+}
+
+// Allow Ctrl+Enter to submit
+document.getElementById('inputText').addEventListener('keydown', e => {
+  if (e.ctrlKey && e.key === 'Enter') summarize();
+});
+</script>
+</body>
+</html>

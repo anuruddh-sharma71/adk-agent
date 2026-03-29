@@ -3,6 +3,8 @@ import uuid
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from agent import run_agent
 
@@ -14,6 +16,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="ADK Text Summarizer Agent", version="1.0.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class RunRequest(BaseModel):
     message: str = Field(..., min_length=1)
@@ -25,6 +28,10 @@ class RunResponse(BaseModel):
     agent: str = "text_summarizer"
 
 @app.get("/")
+async def root():
+    return FileResponse("static/index.html")
+
+@app.get("/health")
 async def health():
     return {"status": "ok", "agent": "text_summarizer", "model": "gemini-2.0-flash"}
 
