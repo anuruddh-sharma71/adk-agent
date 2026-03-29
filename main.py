@@ -1,6 +1,5 @@
 import os
 import uuid
-from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -8,15 +7,8 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from agent import run_agent
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    if not os.environ.get("GOOGLE_API_KEY"):
-        raise RuntimeError("GOOGLE_API_KEY environment variable is not set.")
-    yield
-
-app = FastAPI(title="ADK Text Summarizer Agent", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="ADK Text Summarizer Agent", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 class RunRequest(BaseModel):
     message: str = Field(..., min_length=1)
@@ -26,10 +18,6 @@ class RunResponse(BaseModel):
     response: str
     session_id: str
     agent: str = "text_summarizer"
-
-@app.get("/")
-async def root():
-    return FileResponse("static/index.html")
 
 @app.get("/health")
 async def health():
@@ -45,6 +33,16 @@ async def run(body: RunRequest):
     return RunResponse(response=result, session_id=session_id)
 
 app.add_api_route("/summarize", run, methods=["POST"], response_model=RunResponse)
+
+# Serve frontend — must be AFTER all API routes
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+async def root():
+    if os.path.exists("static/index.html"):
+        return FileResponse("static/index.html")
+    return {"status": "ok", "agent": "text_summarizer", "model": "gemini-2.0-flash"}
 
 if __name__ == "__main__":
     import uvicorn
