@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+<<<<<<< HEAD
 :root{
   --bg:#0a0a0f;
   --sidebar:#0d0d14;
@@ -221,6 +222,30 @@ body{
   opacity:0.12;
   border-radius:16px;
 }
+=======
+:root{--bg:#0a0a0f;--sidebar:#0d0d14;--surface:#13131e;--surface2:#1a1a28;--border:#1e1e2e;--border2:#252535;--accent:#00d4b4;--accent2:#00b89a;--text:#f0f0f8;--muted:#6b6b85;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh;overflow:hidden}
+.sidebar{width:64px;background:var(--sidebar);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:8px;flex-shrink:0}
+.logo{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;cursor:pointer}
+.nav-btn{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--muted);border:none;background:transparent;transition:all 0.2s}
+.nav-btn:hover,.nav-btn.active{background:var(--surface2);color:var(--accent)}
+.sidebar-bottom{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:8px}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;cursor:pointer;border:2px solid var(--border2)}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.topbar{display:flex;align-items:center;justify-content:flex-end;padding:16px 28px;border-bottom:1px solid var(--border);flex-shrink:0}
+.user-pill{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border2);border-radius:100px;padding:6px 14px 6px 8px;cursor:pointer}
+.user-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 28px 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.orb{width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(0,212,180,0.25) 0%,rgba(0,150,130,0.15) 30%,rgba(10,10,30,0.9) 70%,rgba(5,5,20,1) 100%);border:1px solid rgba(0,212,180,0.2);margin-bottom:10px;animation:float 6s ease-in-out infinite;flex-shrink:0}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.greeting{text-align:left;width:100%;max-width:780px;margin-bottom:24px;position:relative;z-index:1}
+.greeting h1{font-size:2.4rem;font-weight:700;line-height:1.2;letter-spacing:-0.5px}
+.greeting h1 span{color:var(--accent)}
+.cards{display:flex;gap:16px;width:100%;max-width:780px;margin-bottom:24px;position:relative;z-index:1}
+.card{flex:1;background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:18px;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;inset:0;opacity:0.12;border-radius:16px}
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
 .card.blue::before{background:linear-gradient(135deg,#667eea,#764ba2)}
 .card.pink::before{background:linear-gradient(135deg,#f093fb,#f5576c)}
 .card.green::before{background:linear-gradient(135deg,#00d4b4,#0097a7)}
@@ -269,6 +294,7 @@ textarea{
   overflow-y:auto;
 }
 textarea::placeholder{color:var(--muted)}
+<<<<<<< HEAD
 .input-bottom{
   display:flex;
   align-items:center;
@@ -326,6 +352,15 @@ textarea::placeholder{color:var(--muted)}
 .chat-area::-webkit-scrollbar{width:4px}
 .chat-area::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
 
+=======
+.input-bottom{display:flex;align-items:center;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.len-select{background:var(--surface2);border:1px solid var(--border2);border-radius:100px;padding:7px 14px;font-size:12px;color:var(--muted);cursor:pointer;outline:none;font-family:'Inter',sans-serif}
+.send-btn{width:42px;height:42px;background:var(--accent);border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-left:auto;transition:all 0.2s;flex-shrink:0}
+.send-btn:hover{background:var(--accent2);transform:scale(1.05)}
+.send-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+.send-btn svg{color:#000}
+.chat-area{flex:1;overflow-y:auto;padding:20px 28px;display:flex;flex-direction:column;gap:16px;scrollbar-width:thin;scrollbar-color:var(--border2) transparent}
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
 .msg{display:flex;gap:12px;animation:fadeUp 0.3s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
@@ -381,6 +416,7 @@ textarea::placeholder{color:var(--muted)}
 .typing span:nth-child(2){animation-delay:0.2s}
 .typing span:nth-child(3){animation-delay:0.4s}
 @keyframes bounce{0%,100%{transform:translateY(0);opacity:0.4}50%{transform:translateY(-5px);opacity:1}}
+<<<<<<< HEAD
 
 /* Error */
 .err-msg{
@@ -403,12 +439,17 @@ textarea::placeholder{color:var(--muted)}
   .orb-wrap{width:160px;height:140px}
   .orb{width:150px;height:150px}
 }
+=======
+.err-msg{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:12px 16px;color:#f87171;font-size:0.88rem;margin:0 28px}
+@media(max-width:640px){.sidebar{width:52px}.cards{flex-direction:column}.greeting h1{font-size:1.6rem}.hero{padding:16px 16px 0}.chat-area{padding:16px}}
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
 </style>
 </head>
 <body>
 
 <!-- Sidebar -->
 <nav class="sidebar">
+<<<<<<< HEAD
   <div class="logo">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
   </div>
@@ -424,6 +465,12 @@ textarea::placeholder{color:var(--muted)}
   <button class="nav-btn" title="Templates">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
   </button>
+=======
+  <div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+  <button class="nav-btn active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></button>
+  <button class="nav-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></button>
+  <button class="nav-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21l-8-7-8 7V5a2 2 0 012-2h12a2 2 0 012 2z"/></svg></button>
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
   <div class="sidebar-bottom">
     <button class="nav-btn" title="Settings">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
@@ -439,17 +486,26 @@ textarea::placeholder{color:var(--muted)}
   <div class="topbar">
     <div class="user-pill">
       <div class="user-avatar">A</div>
+<<<<<<< HEAD
       <span class="user-name">Anuruddh</span>
       <span class="chevron">▾</span>
+=======
+      <span style="font-size:13px;font-weight:500">Anuruddh</span>
+      <span style="color:var(--muted);font-size:12px">▾</span>
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
     </div>
   </div>
 
   <!-- Hero (shown before first message) -->
   <div class="hero" id="heroSection">
+<<<<<<< HEAD
     <div class="orb-wrap">
       <div class="orb"></div>
     </div>
 
+=======
+    <div class="orb"></div>
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
     <div class="greeting">
       <h1>Hey! Anuruddh 👋<br>What can I <span>summarize</span> today?</h1>
     </div>
@@ -459,11 +515,15 @@ textarea::placeholder{color:var(--muted)}
         <div class="card-tag">📰 News Article</div>
         <p>Summarize a news article or blog post for me</p>
       </div>
+<<<<<<< HEAD
       <div class="card pink" onclick="usePrompt('Summarize this research: mRNA vaccines train the immune system by delivering genetic instructions that cause cells to produce a protein, triggering an immune response without using live virus.')">
+=======
+      <div class="card pink" onclick="usePrompt('Summarize this: mRNA vaccines train the immune system by delivering genetic instructions causing cells to produce a protein that triggers an immune response without using live virus.')">
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
         <div class="card-tag">🔬 Research</div>
         <p>Summarize a research paper or report</p>
       </div>
-      <div class="card green" onclick="usePrompt('Summarize the key benefits and risks of artificial intelligence in healthcare, including diagnosis, drug discovery, and patient monitoring.')">
+      <div class="card green" onclick="usePrompt('Summarize the key benefits and risks of artificial intelligence in healthcare including diagnosis, drug discovery, and patient monitoring.')">
         <div class="card-tag">⚡ Quick Summary</div>
         <p>Get a quick summary of any topic</p>
       </div>
@@ -472,20 +532,23 @@ textarea::placeholder{color:var(--muted)}
     <div class="input-wrap">
       <div class="input-box">
         <span class="sparkle">✦</span>
-        <textarea id="txt" placeholder="Ask me anything or paste text to summarize..." rows="2" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <textarea id="txt" placeholder="Paste any text to summarize or ask me anything..." rows="2" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,160)+'px'"></textarea>
         <div class="input-bottom">
+<<<<<<< HEAD
           <button class="attach-btn" onclick="document.getElementById('fileInput').click()">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
             Attach file
           </button>
           <input type="file" id="fileInput" style="display:none" accept=".txt,.pdf,.doc,.docx" onchange="handleFile(event)"/>
+=======
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
           <select class="len-select" id="len">
             <option value="2">2 sentences</option>
             <option value="3" selected>3 sentences</option>
             <option value="5">5 sentences</option>
             <option value="7">7 sentences</option>
           </select>
-          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+          <button class="send-btn" id="btn" onclick="send()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
           </button>
         </div>
@@ -495,6 +558,7 @@ textarea::placeholder{color:var(--muted)}
 
   <!-- Chat view (shown after first message) -->
   <div class="chat-area" id="chatArea" style="display:none"></div>
+<<<<<<< HEAD
 
   <!-- Input (in chat mode, shown below chat) -->
   <div style="padding:0 28px 20px;display:none" id="chatInputWrap">
@@ -513,6 +577,22 @@ textarea::placeholder{color:var(--muted)}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
           </button>
         </div>
+=======
+  <div id="chatBottom" style="padding:0 28px 20px;display:none">
+    <div class="input-box">
+      <span class="sparkle">✦</span>
+      <textarea id="txt2" placeholder="Paste more text to summarize..." rows="2" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send2()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,160)+'px'"></textarea>
+      <div class="input-bottom">
+        <select class="len-select" id="len2">
+          <option value="2">2 sentences</option>
+          <option value="3" selected>3 sentences</option>
+          <option value="5">5 sentences</option>
+          <option value="7">7 sentences</option>
+        </select>
+        <button class="send-btn" id="btn2" onclick="send2()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </button>
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
       </div>
     </div>
   </div>
@@ -520,6 +600,7 @@ textarea::placeholder{color:var(--muted)}
 </div>
 
 <script>
+<<<<<<< HEAD
 let chatMode = false;
 
 function autoResize(el){
@@ -635,6 +716,37 @@ async function doSend(text, len, btn){
   addTyping();
   btn.disabled=true;
 
+=======
+let inChat=false;
+function usePrompt(t){document.getElementById('txt').value=t;document.getElementById('txt').focus()}
+function switchToChat(){if(!inChat){inChat=true;document.getElementById('heroSection').style.display='none';document.getElementById('chatArea').style.display='flex';document.getElementById('chatBottom').style.display='block'}}
+function addMsg(role,text){
+  const a=document.getElementById('chatArea');
+  const d=document.createElement('div');d.className='msg '+role;
+  const av=document.createElement('div');av.className='msg-avatar';av.textContent=role==='agent'?'✦':'A';
+  const b=document.createElement('div');b.className='bubble';
+  if(role==='agent'){
+    b.innerHTML=text.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');
+    const acts=document.createElement('div');acts.className='bubble-actions';
+    const enc=encodeURIComponent(text);
+    acts.innerHTML=`<button class="act-btn" onclick="cp(this,'${enc}')">📋 Copy</button><button class="act-btn" onclick="reset()">🔄 New Summary</button>`;
+    b.appendChild(acts);
+  }else{b.textContent=text}
+  d.appendChild(av);d.appendChild(b);a.appendChild(d);a.scrollTop=a.scrollHeight;
+}
+function addTyping(){
+  const a=document.getElementById('chatArea');
+  const d=document.createElement('div');d.className='msg agent';d.id='typing';
+  d.innerHTML='<div class="msg-avatar">✦</div><div class="bubble"><div class="typing"><span></span><span></span><span></span></div></div>';
+  a.appendChild(d);a.scrollTop=a.scrollHeight;
+}
+function removeTyping(){const t=document.getElementById('typing');if(t)t.remove()}
+function cp(btn,enc){navigator.clipboard.writeText(decodeURIComponent(enc));btn.textContent='✅ Copied!';setTimeout(()=>btn.textContent='📋 Copy',2000)}
+function reset(){inChat=false;document.getElementById('heroSection').style.display='flex';document.getElementById('chatArea').style.display='none';document.getElementById('chatBottom').style.display='none';document.getElementById('chatArea').innerHTML='';document.getElementById('txt').value='';document.getElementById('txt').focus()}
+async function doSend(text,len,btnId){
+  switchToChat();addMsg('user',text);addTyping();
+  const btn=document.getElementById(btnId);btn.disabled=true;
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
   try{
     const r=await fetch('/run',{
       method:'POST',
@@ -642,6 +754,7 @@ async function doSend(text, len, btn){
       body:JSON.stringify({message:`Summarize this in ${len} sentences:\n\n${text}`})
     });
     removeTyping();
+<<<<<<< HEAD
     if(!r.ok) throw new Error('Server error '+r.status);
     const data=await r.json();
     addMessage('agent', data.response);
@@ -673,6 +786,18 @@ function sendMessage2(){
   document.getElementById('txt2').value='';
   doSend(text, len, document.getElementById('sendBtn2'));
 }
+=======
+    if(!r.ok)throw new Error('Server error '+r.status);
+    const d=await r.json();addMsg('agent',d.response);
+  }catch(e){
+    removeTyping();
+    const a=document.getElementById('chatArea');
+    const err=document.createElement('div');err.className='err-msg';err.textContent='❌ Error: '+e.message;a.appendChild(err);a.scrollTop=a.scrollHeight;
+  }finally{btn.disabled=false}
+}
+function send(){const t=document.getElementById('txt').value.trim();if(!t)return;document.getElementById('txt').value='';doSend(t,document.getElementById('len').value,'btn')}
+function send2(){const t=document.getElementById('txt2').value.trim();if(!t)return;document.getElementById('txt2').value='';doSend(t,document.getElementById('len2').value,'btn2')}
+>>>>>>> 0d9c7e2 (Complete fix - UI + backend)
 </script>
 </body>
 </html>
