@@ -18,8 +18,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);displ
 .gl2{width:300px;height:300px;background:#6644ff;bottom:-80px;left:-80px;animation:d2 10s ease-in-out infinite}
 @keyframes d1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,20px)}}
 @keyframes d2{0%,100%{transform:translate(0,0)}50%{transform:translate(20px,-30px)}}
-
-/* LOGIN */
 .lw{width:100%;max-width:440px;padding:16px;position:relative;z-index:10}
 .lb{background:var(--s1);border:1px solid var(--b2);border-radius:24px;padding:42px 36px;animation:su 0.5s ease}
 @keyframes su{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -36,23 +34,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);displ
 .fi input{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:10px;color:var(--tx);padding:11px 13px;font-size:0.9rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
 .fi input:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--ad)}
 .fi input::placeholder{color:var(--mu2)}
-.fr{display:flex;gap:12px}
-.fr .fi{flex:1}
+.fr{display:flex;gap:12px}.fr .fi{flex:1}
 .fgt{text-align:right;margin-top:-6px;margin-bottom:13px}
 .fgt a{font-size:12px;color:var(--ac);text-decoration:none;cursor:pointer}
 .bp{width:100%;background:var(--ac);color:#000;border:none;border-radius:10px;padding:12px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:'Syne',sans-serif;transition:all 0.2s;margin-top:2px}
 .bp:hover{background:var(--ac2);transform:translateY(-1px)}
 .bp:disabled{opacity:0.5;cursor:not-allowed;transform:none}
-.div{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--mu2);font-size:12px}
-.div::before,.div::after{content:'';flex:1;height:1px;background:var(--b2)}
-.bg{width:100%;background:var(--s2);color:var(--tx);border:1px solid var(--b2);border-radius:10px;padding:11px;font-size:0.9rem;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:10px}
-.bg:hover{background:var(--s3)}
+.dv{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--mu2);font-size:12px}
+.dv::before,.dv::after{content:'';flex:1;height:1px;background:var(--b2)}
+.bg2{width:100%;background:var(--s2);color:var(--tx);border:1px solid var(--b2);border-radius:10px;padding:11px;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.bg2:hover{background:var(--s3)}
 .fe{background:rgba(255,68,102,0.1);border:1px solid rgba(255,68,102,0.3);border-radius:8px;padding:9px 13px;color:var(--red);font-size:13px;margin-bottom:11px;display:none}
-.fs{background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.2);border-radius:8px;padding:9px 13px;color:var(--ac);font-size:13px;margin-bottom:11px;display:none}
+.fok{background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.2);border-radius:8px;padding:9px 13px;color:var(--ac);font-size:13px;margin-bottom:11px;display:none}
 .terms{font-size:11px;color:var(--mu2);text-align:center;margin-top:16px;line-height:1.6}
 .terms a{color:var(--mu);text-decoration:none}
-
-/* APP */
 .app{display:flex;width:100vw;height:100vh;overflow:hidden}
 .sb{width:64px;background:var(--s1);border-right:1px solid var(--b1);display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:5px;flex-shrink:0;z-index:10}
 .slogo{width:38px;height:38px;background:var(--ac);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;cursor:pointer}
@@ -70,7 +65,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);displ
 .uc{display:flex;align-items:center;gap:8px;background:var(--s2);border:1px solid var(--b2);border-radius:100px;padding:5px 14px 5px 6px;cursor:pointer;position:relative}
 .uc:hover{border-color:rgba(0,255,204,0.3)}
 .cav{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#6644ff,#00ffcc);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#000;font-family:'Syne',sans-serif}
-.dd{position:absolute;top:calc(100% + 8px);right:0;background:var(--s2);border:1px solid var(--b2);border-radius:12px;padding:6px;min-width:180px;box-shadow:0 8px 32px #00000060;display:none;z-index:100}
+.dd{position:absolute;top:calc(100% + 8px);right:0;background:var(--s2);border:1px solid var(--b2);border-radius:12px;padding:6px;min-width:185px;box-shadow:0 8px 32px #00000060;display:none;z-index:100}
 .dd.open{display:block;animation:fi 0.15s ease}
 @keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .ddi{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;color:var(--tx);cursor:pointer;transition:background 0.15s}
@@ -79,18 +74,24 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);displ
 .ddi svg{flex-shrink:0;color:var(--mu)}
 .ddi.red svg{color:var(--red)}
 .dds{height:1px;background:var(--b1);margin:4px 0}
-
-/* PANELS */
 .pn{display:none;flex:1;flex-direction:column;overflow:hidden}
 .pn.on{display:flex}
-
-/* HOME */
 .hs{flex:1;overflow-y:auto;padding:22px 26px;scrollbar-width:thin;scrollbar-color:var(--b2) transparent}
 .orb{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 35% 35%,rgba(0,255,204,0.3) 0%,rgba(0,200,160,0.1) 40%,rgba(7,7,15,0.95) 70%);border:1px solid rgba(0,255,204,0.2);box-shadow:0 0 60px rgba(0,255,204,0.08);animation:fl 6s ease-in-out infinite;margin-bottom:14px}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .ht h1{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;line-height:1.15;letter-spacing:-0.5px;margin-bottom:5px}
 .ht h1 span{color:var(--ac)}
 .ht p{color:var(--mu);font-size:0.87rem;margin-bottom:22px}
+/* KEY SETUP BOX */
+.kbox{background:rgba(255,204,68,0.06);border:1px solid rgba(255,204,68,0.3);border-radius:14px;padding:18px;margin-bottom:20px;max-width:800px}
+.kbox h4{font-family:'Syne',sans-serif;font-size:14px;color:#ffcc44;margin-bottom:6px}
+.kbox p{font-size:12px;color:var(--mu);margin-bottom:10px;line-height:1.6}
+.kbox p a{color:#ffcc44;text-decoration:none}
+.kbox p a:hover{text-decoration:underline}
+.kinput{width:100%;background:var(--s2);border:1px solid rgba(255,204,68,0.3);border-radius:8px;color:var(--tx);padding:9px 13px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:10px}
+.kinput:focus{border-color:#ffcc44}
+.kbtn{background:#ffcc44;color:#000;border:none;border-radius:8px;padding:9px 20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Syne',sans-serif;transition:all 0.2s}
+.kbtn:hover{background:#e6b800}
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;max-width:800px;margin-bottom:22px}
 .sc{background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);padding:15px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden}
 .sc::before{content:'';position:absolute;inset:0;opacity:0.1;border-radius:var(--r)}
@@ -109,8 +110,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);displ
 .sc.c5 .stag{background:rgba(68,255,170,0.15);color:#44ffaa}
 .sc.c6 .stag{background:rgba(255,68,204,0.15);color:#ff88dd}
 .sc p{font-size:12px;color:var(--mu);line-height:1.5}
-.ib{background:var(--s1);border:1px solid var(--b2);border-radius:18px;padding:15px 15px 11px;transition:border-color 0.2s,box-shadow 0.2s;max-width:800px}
-.ib:focus-within{border-color:rgba(0,255,204,0.35);box-shadow:0 0 0 3px rgba(0,255,204,0.06)}
+.ibox{background:var(--s1);border:1px solid var(--b2);border-radius:18px;padding:15px 15px 11px;transition:border-color 0.2s,box-shadow 0.2s;max-width:800px}
+.ibox:focus-within{border-color:rgba(0,255,204,0.35);box-shadow:0 0 0 3px rgba(0,255,204,0.06)}
 .sp{font-size:15px;margin-bottom:7px;display:block;opacity:0.8}
 textarea.ta{width:100%;background:transparent;border:none;outline:none;color:var(--tx);font-family:'DM Sans',sans-serif;font-size:0.92rem;resize:none;min-height:50px;max-height:140px;line-height:1.6;overflow-y:auto}
 textarea.ta::placeholder{color:var(--mu2)}
@@ -122,8 +123,6 @@ select.ibtn{appearance:none}
 .sbtn:hover{background:var(--ac2);transform:scale(1.05)}
 .sbtn:disabled{opacity:0.4;cursor:not-allowed;transform:none}
 .sbtn svg{color:#000}
-
-/* CHAT */
 .cs{flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:var(--b2) transparent}
 .msg{display:flex;gap:10px;animation:mi 0.25s ease}
 @keyframes mi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
@@ -136,10 +135,10 @@ select.ibtn{appearance:none}
 .msg.u .bub{background:rgba(0,255,204,0.1);border:1px solid rgba(0,255,204,0.18);border-top-right-radius:3px}
 .bub b,.bub strong{color:var(--ac);font-weight:600}
 .bub code{background:var(--s2);border:1px solid var(--b2);border-radius:4px;padding:2px 6px;font-size:12px;font-family:monospace}
-.bub pre{background:var(--s2);border:1px solid var(--b2);border-radius:8px;padding:12px;margin:8px 0;overflow-x:auto;font-size:12px;font-family:monospace;line-height:1.6}
+.bub pre{background:var(--s2);border:1px solid var(--b2);border-radius:8px;padding:12px;margin:8px 0;overflow-x:auto;font-size:12px;font-family:monospace;line-height:1.6;white-space:pre-wrap}
 .bub ul,.bub ol{padding-left:18px;margin:6px 0}
 .bub li{margin:3px 0}
-.bub h3{color:var(--ac);font-family:'Syne',sans-serif;margin:10px 0 4px}
+.bub h3{color:var(--ac);font-family:'Syne',sans-serif;margin:10px 0 4px;font-size:14px}
 .bacts{display:flex;gap:6px;margin-top:10px;padding-top:8px;border-top:1px solid var(--b1);flex-wrap:wrap}
 .bact{background:transparent;border:1px solid var(--b2);border-radius:7px;padding:4px 10px;font-size:11px;color:var(--mu);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s}
 .bact:hover{color:var(--tx);border-color:rgba(0,255,204,0.3)}
@@ -149,9 +148,6 @@ select.ibtn{appearance:none}
 .tdots span:nth-child(3){animation-delay:.4s}
 @keyframes td{0%,100%{opacity:0.4;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
 .cb{padding:10px 24px 16px;flex-shrink:0}
-.ebub{background:rgba(255,68,102,0.08);border:1px solid rgba(255,68,102,0.2);border-radius:12px;padding:10px 14px;color:var(--red);font-size:13px}
-
-/* HISTORY / SAVED / SETTINGS */
 .pb{flex:1;overflow-y:auto;padding:22px 26px;scrollbar-width:thin;scrollbar-color:var(--b2) transparent}
 .ph{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:16px}
 .hl{display:flex;flex-direction:column;gap:8px;max-width:700px}
@@ -163,7 +159,7 @@ select.ibtn{appearance:none}
 .emp{text-align:center;padding:50px 20px;color:var(--mu)}
 .emp svg{margin:0 auto 12px;display:block;opacity:0.3}
 .svgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:11px;max-width:900px}
-.svc{background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);padding:15px;position:relative}
+.svc{background:var(--s1);border:1px solid var(--b2);border-radius:var(--r);padding:15px}
 .sct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
 .svtg{font-size:11px;color:var(--ac);background:var(--ad);padding:3px 10px;border-radius:100px}
 .svdl{background:transparent;border:none;cursor:pointer;color:var(--mu);transition:color 0.15s;padding:2px}
@@ -187,15 +183,6 @@ select.ibtn{appearance:none}
 .bo:hover{border-color:rgba(0,255,204,0.4);color:var(--ac)}
 .bd{background:rgba(255,68,102,0.1);border:1px solid rgba(255,68,102,0.3);border-radius:8px;padding:7px 14px;color:var(--red);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all 0.2s;margin-left:8px}
 .bd:hover{background:rgba(255,68,102,0.2)}
-
-/* KEY SETUP BANNER */
-.key-banner{background:rgba(255,204,68,0.08);border:1px solid rgba(255,204,68,0.25);border-radius:12px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:flex-start;gap:12px;max-width:800px}
-.key-banner p{font-size:13px;color:#ffcc44;line-height:1.5}
-.key-banner input{background:var(--s2);border:1px solid rgba(255,204,68,0.3);border-radius:8px;color:var(--tx);padding:8px 12px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;width:100%;margin-top:8px}
-.key-banner input:focus{border-color:#ffcc44}
-.key-save-btn{background:#ffcc44;color:#000;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px;font-family:'Syne',sans-serif}
-
-/* MODAL */
 .mov{position:fixed;inset:0;background:#00000080;backdrop-filter:blur(4px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.2s}
 .mov.open{opacity:1;pointer-events:all}
 .mo{background:var(--s1);border:1px solid var(--b2);border-radius:20px;padding:32px;max-width:400px;width:90%;animation:su 0.3s ease}
@@ -206,13 +193,10 @@ select.ibtn{appearance:none}
 .bcl:hover{color:var(--tx)}
 .bsn{flex:1;background:var(--ac);border:none;border-radius:10px;padding:10px;color:#000;font-family:'Syne',sans-serif;font-size:0.9rem;font-weight:700;cursor:pointer}
 .bsn:hover{background:var(--ac2)}
-
-/* TOAST */
 .toast{position:fixed;bottom:22px;right:22px;z-index:300;background:var(--s2);border:1px solid var(--b2);border-radius:12px;padding:10px 16px;font-size:13px;box-shadow:0 8px 32px #00000060;transform:translateY(80px);opacity:0;transition:all 0.3s;max-width:280px}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.ok{border-color:rgba(0,255,204,0.3);color:var(--ac)}
 .toast.er{border-color:rgba(255,68,102,0.3);color:var(--red)}
-
 @media(max-width:680px){.sb{width:52px}.sg{grid-template-columns:1fr 1fr}.bub{max-width:88%}.tb,.hs,.pb,.cs,.cb{padding-left:14px;padding-right:14px}.ht h1{font-size:1.5rem}.svgrid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -226,14 +210,14 @@ select.ibtn{appearance:none}
 <div class="lw"><div class="lb">
   <div class="brand"><div class="bico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="bname">Summar<span>AI</span></div></div>
   <div class="tabs"><button class="tab active" id="tL" onclick="stab('l')">Sign In</button><button class="tab" id="tS" onclick="stab('s')">Sign Up</button></div>
-  <div id="fE" class="fe"></div><div id="fS" class="fs"></div>
+  <div id="fE" class="fe"></div><div id="fOk" class="fok"></div>
   <div id="lF">
     <div class="fi"><label>Email</label><input type="email" id="lE" placeholder="you@example.com" onkeydown="if(event.key==='Enter')doL()"/></div>
     <div class="fi"><label>Password</label><input type="password" id="lP" placeholder="••••••••" onkeydown="if(event.key==='Enter')doL()"/></div>
     <div class="fgt"><a onclick="openFgt()">Forgot password?</a></div>
     <button class="bp" id="lB" onclick="doL()">Sign In →</button>
-    <div class="div">or</div>
-    <button class="bg" onclick="gL()"><svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Continue with Google</button>
+    <div class="dv">or</div>
+    <button class="bg2" onclick="gL()"><svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Continue with Google</button>
   </div>
   <div id="sF" style="display:none">
     <div class="fr"><div class="fi"><label>First Name</label><input type="text" id="sN1" placeholder="Anuruddh"/></div><div class="fi"><label>Last Name</label><input type="text" id="sN2" placeholder="Sharma"/></div></div>
@@ -241,8 +225,8 @@ select.ibtn{appearance:none}
     <div class="fi"><label>Password</label><input type="password" id="sP1" placeholder="Min. 6 characters"/></div>
     <div class="fi"><label>Confirm Password</label><input type="password" id="sP2" placeholder="Repeat password" onkeydown="if(event.key==='Enter')doS()"/></div>
     <button class="bp" id="sB" onclick="doS()">Create Account →</button>
-    <div class="div">or</div>
-    <button class="bg" onclick="gL()"><svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Sign up with Google</button>
+    <div class="dv">or</div>
+    <button class="bg2" onclick="gL()"><svg width="17" height="17" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>Sign up with Google</button>
   </div>
   <div class="terms">By continuing you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></div>
 </div></div>
@@ -285,26 +269,25 @@ select.ibtn{appearance:none}
         <div class="orb"></div>
         <div class="ht">
           <h1>Hey! <span id="hN">there</span> 👋<br>How can I <span>help</span> you today?</h1>
-          <p>Ask me anything — summarize, explain, write, code, answer questions and more.</p>
+          <p>Ask me anything — summarize, explain, write, code, translate and more.</p>
         </div>
-        <div id="keyBanner" class="key-banner" style="display:none">
-          <div style="flex:1">
-            <p>⚠️ <b>Groq API key needed.</b> Get your free key at <a href="https://console.groq.com" target="_blank" style="color:#ffcc44">console.groq.com</a> → API Keys → Create API Key</p>
-            <input type="password" id="keyInput" placeholder="Paste your gsk_... key here"/>
-            <br/><button class="key-save-btn" onclick="saveKey()">Save Key & Continue</button>
-          </div>
+        <div id="kbox" class="kbox" style="display:none">
+          <h4>⚡ Setup Required — Add Your Free Groq API Key</h4>
+          <p>Get your free key in 30 seconds: <a href="https://console.groq.com" target="_blank">console.groq.com</a> → Sign up → API Keys → Create API Key</p>
+          <input class="kinput" type="password" id="kIn" placeholder="Paste your gsk_... key here"/>
+          <br/><button class="kbtn" onclick="saveKey()">Save Key & Start Chatting →</button>
         </div>
         <div class="sg">
-          <div class="sc c1" onclick="uSug('Summarize the impact of climate change on global food security and agriculture.')"><div class="stag">📰 Summarize</div><p>Summarize any article or news</p></div>
-          <div class="sc c2" onclick="uSug('Explain how artificial intelligence and machine learning work in simple terms.')"><div class="stag">💡 Explain</div><p>Explain any concept simply</p></div>
+          <div class="sc c1" onclick="uSug('Summarize the impact of climate change on global food security and agriculture worldwide.')"><div class="stag">📰 Summarize</div><p>Summarize any article or text</p></div>
+          <div class="sc c2" onclick="uSug('Explain how artificial intelligence and machine learning work in simple terms with examples.')"><div class="stag">💡 Explain</div><p>Explain any concept clearly</p></div>
           <div class="sc c3" onclick="uSug('Write a professional email to my manager requesting a day off next Friday.')"><div class="stag">✍️ Write</div><p>Write emails, essays, content</p></div>
-          <div class="sc c4" onclick="uSug('Write a Python function to sort a list of dictionaries by a specific key.')"><div class="stag">💻 Code</div><p>Help with coding problems</p></div>
-          <div class="sc c5" onclick="uSug('What are the best practices for healthy eating and maintaining a balanced diet?')"><div class="stag">❓ Answer</div><p>Answer any question</p></div>
-          <div class="sc c6" onclick="uSug('Translate the following to Hindi: Hello, how are you? I hope you are doing well.')"><div class="stag">🌐 Translate</div><p>Translate to any language</p></div>
+          <div class="sc c4" onclick="uSug('Write a Python function that takes a list and returns the top 3 most frequent elements.')"><div class="stag">💻 Code</div><p>Help with any coding problem</p></div>
+          <div class="sc c5" onclick="uSug('What are the best strategies for improving productivity and managing time effectively?')"><div class="stag">❓ Answer</div><p>Answer any question instantly</p></div>
+          <div class="sc c6" onclick="uSug('Translate to Hindi: Good morning! How are you? I hope you have a wonderful day ahead.')"><div class="stag">🌐 Translate</div><p>Translate to any language</p></div>
         </div>
-        <div class="ib">
+        <div class="ibox">
           <span class="sp">✦</span>
-          <textarea class="ta" id="hTxt" placeholder="Ask me anything — summarize, explain, write, translate, code..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();hGo()}" oninput="rs(this)"></textarea>
+          <textarea class="ta" id="hTxt" placeholder="Ask me anything — summarize, explain, write, code, translate..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();hGo()}" oninput="rs(this)"></textarea>
           <div class="ibar">
             <button class="ibtn" onclick="document.getElementById('fIn').click()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg> Attach</button>
             <input type="file" id="fIn" style="display:none" accept=".txt,.md" onchange="lFile(event)"/>
@@ -319,7 +302,7 @@ select.ibtn{appearance:none}
     <div class="pn" id="pn-chat">
       <div class="cs" id="cS"></div>
       <div class="cb">
-        <div class="ib">
+        <div class="ibox">
           <span class="sp">✦</span>
           <textarea class="ta" id="cTxt" placeholder="Ask anything — summarize, explain, write, code, translate..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();cGo()}" oninput="rs(this)"></textarea>
           <div class="ibar">
@@ -351,16 +334,17 @@ select.ibtn{appearance:none}
             <button class="bd" onclick="doOut()">Sign Out</button>
           </div>
         </div>
-        <div class="ss">API Key</div>
-        <div class="sr" style="flex-direction:column;align-items:flex-start;gap:8px">
-          <div><h4>Groq API Key</h4><p>Required to run the AI agent. Get free at console.groq.com</p></div>
-          <input type="password" id="settKey" placeholder="gsk_..." style="width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:8px;color:var(--tx);padding:8px 12px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none" oninput="this.style.borderColor='rgba(0,255,204,0.4)'"/>
+        <div class="ss">Groq API Key</div>
+        <div style="background:var(--s1);border:1px solid var(--b2);border-radius:12px;padding:16px;margin-bottom:8px">
+          <p style="font-size:13px;color:var(--mu);margin-bottom:10px">Get your free key at <a href="https://console.groq.com" target="_blank" style="color:var(--ac)">console.groq.com</a> → API Keys → Create API Key</p>
+          <input type="password" id="stKey" placeholder="gsk_..." style="width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:8px;color:var(--tx);padding:9px 13px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:10px"/>
           <button class="bo" onclick="saveKeyFromSett()">Save Key</button>
+          <span id="keyStatus" style="font-size:12px;color:var(--mu);margin-left:10px"></span>
         </div>
-        <div class="ss" style="margin-top:20px">Preferences</div>
-        <div class="sr"><div><h4>Auto-save Responses</h4><p>Automatically save every response</p></div><div class="tog" id="tAS" onclick="tSet('as')"></div></div>
+        <div class="ss" style="margin-top:18px">Preferences</div>
+        <div class="sr"><div><h4>Auto-save Responses</h4><p>Save every response automatically</p></div><div class="tog" id="tAS" onclick="tSet('as')"></div></div>
         <div class="sr"><div><h4>Show Notifications</h4><p>Toast notifications on actions</p></div><div class="tog on" id="tNF" onclick="tSet('nf')"></div></div>
-        <div class="ss" style="margin-top:20px">Data</div>
+        <div class="ss" style="margin-top:18px">Data</div>
         <div class="sr"><div><h4>Clear History</h4><p>Delete all conversations</p></div><button class="bd" onclick="clrH()">Clear</button></div>
         <div class="sr"><div><h4>Clear Saved</h4><p>Delete all saved responses</p></div><button class="bd" onclick="clrS()">Clear</button></div>
       </div></div>
@@ -375,7 +359,7 @@ select.ibtn{appearance:none}
     <h3>Reset Password</h3>
     <p>Enter your email and we'll send a reset link (demo only).</p>
     <div class="fi"><label>Email</label><input type="email" id="fgtE" placeholder="you@example.com"/></div>
-    <div id="fgtMsg" class="fs" style="display:none"></div>
+    <div id="fgtMsg" class="fok" style="display:none"></div>
     <div class="mbtns"><button class="bcl" onclick="cFgt()">Cancel</button><button class="bsn" onclick="sRst()">Send Link</button></div>
   </div>
 </div>
@@ -384,43 +368,92 @@ select.ibtn{appearance:none}
 
 <script>
 // STATE
-let user=null,hist=[],sav=[],prefs={as:false,nf:true},groqKey='';
+let user=null,hist=[],sav=[],prefs={as:false,nf:true};
 const users=JSON.parse(localStorage.getItem('_u')||'{}');
+
+// KEY — stored in browser only, never sent to server
+function getKey(){return localStorage.getItem('_gk')||''}
+function saveKey(){
+  const k=document.getElementById('kIn').value.trim();
+  if(!k||!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}
+  localStorage.setItem('_gk',k);
+  document.getElementById('kbox').style.display='none';
+  document.getElementById('stKey').value=k;
+  document.getElementById('keyStatus').textContent='✓ Key saved';
+  toast('API key saved! You can now chat.','ok');
+}
+function saveKeyFromSett(){
+  const k=document.getElementById('stKey').value.trim();
+  if(!k||!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}
+  localStorage.setItem('_gk',k);
+  document.getElementById('kbox').style.display='none';
+  document.getElementById('keyStatus').textContent='✓ Key saved';
+  toast('API key saved!','ok');
+}
 
 // UTILS
 function rs(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,140)+'px'}
-function toast(m,t='ok'){if(!prefs.nf&&t==='ok')return;const e=document.getElementById('toast');e.textContent=(t==='ok'?'✓ ':'✕ ')+m;e.className='toast '+t+' show';clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),3000)}
-function sE(m){const e=document.getElementById('fE');e.textContent=m;e.style.display='block';document.getElementById('fS').style.display='none'}
-function sOk(m){const s=document.getElementById('fS');s.textContent=m;s.style.display='block';document.getElementById('fE').style.display='none'}
-function clrM(){document.getElementById('fE').style.display='none';document.getElementById('fS').style.display='none'}
+function toast(m,t='ok'){if(!prefs.nf&&t==='ok')return;const e=document.getElementById('toast');e.textContent=(t==='ok'?'✓ ':'✕ ')+m;e.className='toast '+t+' show';clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),3500)}
+function sErr(m){const e=document.getElementById('fE');e.textContent=m;e.style.display='block';document.getElementById('fOk').style.display='none'}
+function sOk(m){const s=document.getElementById('fOk');s.textContent=m;s.style.display='block';document.getElementById('fE').style.display='none'}
+function clrM(){document.getElementById('fE').style.display='none';document.getElementById('fOk').style.display='none'}
 
-// API KEY
-function getKey(){return groqKey||localStorage.getItem('_gk')||''}
-function saveKey(){const k=document.getElementById('keyInput').value.trim();if(!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}groqKey=k;localStorage.setItem('_gk',k);document.getElementById('keyBanner').style.display='none';document.getElementById('settKey').value=k;toast('API key saved!','ok')}
-function saveKeyFromSett(){const k=document.getElementById('settKey').value.trim();if(!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}groqKey=k;localStorage.setItem('_gk',k);document.getElementById('keyBanner').style.display='none';toast('API key saved!','ok')}
-function checkKey(){if(!getKey()){document.getElementById('keyBanner').style.display='block';return false}return true}
-
-// AUTH TABS
+// TABS
 function stab(t){clrM();document.getElementById('tL').className='tab'+(t==='l'?' active':'');document.getElementById('tS').className='tab'+(t==='s'?' active':'');document.getElementById('lF').style.display=t==='l'?'block':'none';document.getElementById('sF').style.display=t==='s'?'block':'none'}
 
 // LOGIN
-function doL(){clrM();const e=document.getElementById('lE').value.trim(),p=document.getElementById('lP').value;if(!e||!p){sE('Please fill in all fields.');return}if(!/\S+@\S+\.\S+/.test(e)){sE('Invalid email.');return}const b=document.getElementById('lB');b.disabled=true;b.textContent='Signing in...';setTimeout(()=>{const u=users[e];if(!u){sE('No account found. Sign up first.');b.disabled=false;b.textContent='Sign In →';return}if(u.p!==btoa(p)){sE('Incorrect password.');b.disabled=false;b.textContent='Sign In →';return}user=u;localStorage.setItem('_sess',JSON.stringify(u));b.disabled=false;b.textContent='Sign In →';enter(u)},700)}
+function doL(){
+  clrM();
+  const e=document.getElementById('lE').value.trim(),p=document.getElementById('lP').value;
+  if(!e||!p){sErr('Please fill in all fields.');return}
+  if(!/\S+@\S+\.\S+/.test(e)){sErr('Invalid email address.');return}
+  const b=document.getElementById('lB');b.disabled=true;b.textContent='Signing in...';
+  setTimeout(()=>{
+    const u=users[e];
+    if(!u){sErr('No account found. Please sign up.');b.disabled=false;b.textContent='Sign In →';return}
+    if(u.p!==btoa(p)){sErr('Incorrect password.');b.disabled=false;b.textContent='Sign In →';return}
+    user=u;localStorage.setItem('_sess',JSON.stringify(u));
+    b.disabled=false;b.textContent='Sign In →';
+    enter(u);
+  },700);
+}
 
 // SIGNUP
-function doS(){clrM();const n1=document.getElementById('sN1').value.trim(),n2=document.getElementById('sN2').value.trim(),e=document.getElementById('sE').value.trim(),p1=document.getElementById('sP1').value,p2=document.getElementById('sP2').value;if(!n1||!e||!p1){sE('Fill required fields.');return}if(!/\S+@\S+\.\S+/.test(e)){sE('Invalid email.');return}if(p1.length<6){sE('Password min 6 chars.');return}if(p1!==p2){sE('Passwords do not match.');return}if(users[e]){sE('Account exists. Sign in.');return}const b=document.getElementById('sB');b.disabled=true;b.textContent='Creating...';setTimeout(()=>{const u={n:n1+(n2?' '+n2:''),e,p:btoa(p1),i:(n1[0]+(n2?n2[0]:'')).toUpperCase()};users[e]=u;localStorage.setItem('_u',JSON.stringify(users));user=u;localStorage.setItem('_sess',JSON.stringify(u));b.disabled=false;b.textContent='Create Account →';sOk('Welcome! Signing you in...');setTimeout(()=>enter(u),600)},800)}
+function doS(){
+  clrM();
+  const n1=document.getElementById('sN1').value.trim(),n2=document.getElementById('sN2').value.trim();
+  const e=document.getElementById('sE').value.trim(),p1=document.getElementById('sP1').value,p2=document.getElementById('sP2').value;
+  if(!n1||!e||!p1){sErr('Please fill required fields.');return}
+  if(!/\S+@\S+\.\S+/.test(e)){sErr('Invalid email address.');return}
+  if(p1.length<6){sErr('Password needs at least 6 characters.');return}
+  if(p1!==p2){sErr('Passwords do not match.');return}
+  if(users[e]){sErr('Account already exists. Please sign in.');return}
+  const b=document.getElementById('sB');b.disabled=true;b.textContent='Creating...';
+  setTimeout(()=>{
+    const u={n:n1+(n2?' '+n2:''),e,p:btoa(p1),i:(n1[0]+(n2?n2[0]:'')).toUpperCase()};
+    users[e]=u;localStorage.setItem('_u',JSON.stringify(users));
+    user=u;localStorage.setItem('_sess',JSON.stringify(u));
+    b.disabled=false;b.textContent='Create Account →';
+    sOk('Account created! Welcome 🎉');
+    setTimeout(()=>enter(u),600);
+  },800);
+}
 
-// GOOGLE
-function gL(){const u={n:'Google User',e:'google@demo.com',i:'G',p:''};user=u;localStorage.setItem('_sess',JSON.stringify(u));enter(u)}
+// GOOGLE LOGIN
+function gL(){
+  const u={n:'Google User',e:'google@demo.com',i:'G',p:''};
+  user=u;localStorage.setItem('_sess',JSON.stringify(u));enter(u);
+}
 
 // FORGOT
-function openFgt(){document.getElementById('fgtM').classList.add('open');document.getElementById('fgtE').value=document.getElementById('lE').value}
+function openFgt(){document.getElementById('fgtM').classList.add('open');document.getElementById('fgtE').value=document.getElementById('lE').value||''}
 function cFgt(){document.getElementById('fgtM').classList.remove('open');document.getElementById('fgtMsg').style.display='none'}
-function sRst(){const e=document.getElementById('fgtE').value.trim();if(!e)return;const m=document.getElementById('fgtMsg');m.textContent='✓ Link sent to '+e+' (demo)';m.style.display='block';setTimeout(cFgt,2500)}
+function sRst(){const e=document.getElementById('fgtE').value.trim();if(!e)return;const m=document.getElementById('fgtMsg');m.textContent='✓ Reset link sent to '+e+' (demo only)';m.style.display='block';setTimeout(cFgt,2500)}
 
 // ENTER APP
 function enter(u){
   const init=u.i||(u.n?u.n[0].toUpperCase():'U');
-  const fname=u.n.split(' ')[0]||u.n;
+  const fname=u.n.split(' ')[0];
   ['cAv','sAv','pAv'].forEach(id=>document.getElementById(id).textContent=init);
   document.getElementById('cNm').textContent=u.n;
   document.getElementById('hN').textContent=fname;
@@ -428,20 +461,35 @@ function enter(u){
   document.getElementById('pEm').textContent=u.e;
   hist=JSON.parse(localStorage.getItem('_h_'+u.e)||'[]');
   sav=JSON.parse(localStorage.getItem('_s_'+u.e)||'[]');
-  groqKey=localStorage.getItem('_gk')||'';
-  if(groqKey)document.getElementById('settKey').value=groqKey;
+  const k=getKey();
+  if(k){document.getElementById('stKey').value=k;document.getElementById('keyStatus').textContent='✓ Key saved'}
+  else{setTimeout(()=>document.getElementById('kbox').style.display='block',400)}
   rH();rS();
   document.getElementById('LP').classList.add('hidden');
   document.getElementById('AP').classList.remove('hidden');
   gP('home');
-  if(!groqKey)setTimeout(()=>document.getElementById('keyBanner').style.display='block',500);
 }
 
 // LOGOUT
-function doOut(){user=null;localStorage.removeItem('_sess');cDD();document.getElementById('AP').classList.add('hidden');document.getElementById('LP').classList.remove('hidden');document.getElementById('cS').innerHTML='';clrM();toast('Signed out','ok')}
+function doOut(){
+  user=null;localStorage.removeItem('_sess');cDD();
+  document.getElementById('AP').classList.add('hidden');
+  document.getElementById('LP').classList.remove('hidden');
+  document.getElementById('cS').innerHTML='';
+  clrM();toast('Signed out','ok');
+}
 
 // PANELS
-function gP(n){document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.snav').forEach(b=>b.classList.remove('on'));document.getElementById('pn-'+n).classList.add('on');const m={home:'nH',chat:'nC',hist:'nHi',saved:'nSv',sett:'nSt'};if(m[n])document.getElementById(m[n]).classList.add('on');const t={home:'Home',chat:'Chat',hist:'History',saved:'Saved',sett:'Settings'};document.getElementById('pTt').textContent=t[n]||n;cDD()}
+function gP(n){
+  document.querySelectorAll('.pn').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.snav').forEach(b=>b.classList.remove('on'));
+  document.getElementById('pn-'+n).classList.add('on');
+  const m={home:'nH',chat:'nC',hist:'nHi',saved:'nSv',sett:'nSt'};
+  if(m[n])document.getElementById(m[n]).classList.add('on');
+  const t={home:'Home',chat:'Chat',hist:'History',saved:'Saved',sett:'Settings'};
+  document.getElementById('pTt').textContent=t[n]||n;
+  cDD();
+}
 
 // DROPDOWN
 function tDD(){document.getElementById('DD').classList.toggle('open')}
@@ -449,72 +497,113 @@ function cDD(){document.getElementById('DD').classList.remove('open')}
 document.addEventListener('click',e=>{if(!document.getElementById('uC').contains(e.target))cDD()});
 
 // FILE
-function lFile(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{document.getElementById('hTxt').value=ev.target.result.slice(0,4000);rs(document.getElementById('hTxt'))};r.readAsText(f);toast('File loaded','ok')}
+function lFile(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{document.getElementById('hTxt').value=ev.target.result.slice(0,4000);rs(document.getElementById('hTxt'))};
+  r.readAsText(f);toast('File loaded','ok');
+}
 
 // SUGGESTION
 function uSug(t){document.getElementById('hTxt').value=t;rs(document.getElementById('hTxt'));document.getElementById('hTxt').focus()}
 
-// BUILD PROMPT
+// BUILD SMART PROMPT
 function buildPrompt(msg,len){
-  const lower=msg.toLowerCase();
-  const isSummarize=lower.includes('summarize')||lower.includes('summary');
-  const lenMap={'2':'in 2 sentences','3':'in 3 sentences','5':'in 5 sentences','detailed':'in detail with bullet points'};
-  if(isSummarize&&len!=='detailed'){
-    return`You are SummarAI, a brilliant AI assistant. The user wants a summary. Provide a clear summary ${lenMap[len]||'in 3 sentences'}. Start with **Summary:** then the summary. End with a new line **Word count:** X words. Use **bold** for key terms.
+  const low=msg.toLowerCase();
+  const lenTxt={'2':'in exactly 2 sentences','3':'in exactly 3 sentences','5':'in 5 sentences','detailed':'in detail with clear sections and bullet points where helpful'};
+  return`You are SummarAI, an expert AI assistant. Answer the user's request clearly, helpfully, and completely.
 
-User request: ${msg}`;
-  }
-  return`You are SummarAI, a brilliant and friendly AI assistant. You can help with anything: summarization, explanation, writing, coding, translation, answering questions, giving advice, and more.
+FORMATTING RULES:
+- Use **bold** for key terms and important points
+- Use bullet points starting with "- " for lists
+- Use numbered lists "1. " for steps or sequences  
+- For code, use triple backticks with language: \`\`\`python\\ncode here\`\`\`
+- Use ### for section headings when needed
+- Keep responses clear and well-structured
 
-Guidelines:
-- Use **bold** for important terms and headings
-- Use bullet points (- item) for lists
-- Use numbered lists (1. item) for steps
-- For code, wrap in \`\`\`language\\ncode\`\`\`
-- Be clear, helpful, and thorough
-- If asked to summarize, start with **Summary:**
-- If explaining, break into simple parts
-- Always give complete, useful answers
+If the user asks to SUMMARIZE something: Start with **Summary:** and provide the summary ${lenTxt[len]||'in 3 sentences'}. End with **Word count:** X words.
 
-User message: ${msg}`;
+If the user asks to EXPLAIN something: Break it down simply with examples.
+
+If the user asks to WRITE something: Produce the requested content directly.
+
+If the user asks to TRANSLATE: Provide the translation clearly labeled.
+
+If the user asks a QUESTION: Give a thorough, accurate answer.
+
+For CODE requests: Provide working, commented code.
+
+USER REQUEST:
+${msg}`;
 }
 
-// SEND
-async function doSend(text,len,btnId){
-  if(!checkKey()){toast('Please add your Groq API key first','er');gP('home');return}
-  const btn=document.getElementById(btnId);btn.disabled=true;
-  gP('chat');addMsg('u',text);addTyping();
-  const prompt=buildPrompt(text,len);
-  try{
-    const r=await fetch('/run',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({message:prompt,groq_key:getKey()})
-    });
-    removeTyping();
-    if(!r.ok){
-      const err=await r.json().catch(()=>({detail:'Unknown error'}));
-      throw new Error(err.detail||'Server error '+r.status);
+// CALL GROQ API DIRECTLY FROM BROWSER
+async function callGroq(prompt){
+  const key=getKey();
+  if(!key){
+    document.getElementById('kbox').style.display='block';
+    gP('home');
+    throw new Error('Please add your Groq API key first');
+  }
+  const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+    method:'POST',
+    headers:{
+      'Authorization':'Bearer '+key,
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify({
+      model:'llama3-8b-8192',
+      messages:[{role:'user',content:prompt}],
+      temperature:0.7,
+      max_tokens:2048
+    })
+  });
+  if(!res.ok){
+    const err=await res.json().catch(()=>({}));
+    const msg=err.error?.message||'API error '+res.status;
+    // If key invalid, clear it and show setup
+    if(res.status===401){
+      localStorage.removeItem('_gk');
+      document.getElementById('kbox').style.display='block';
+      document.getElementById('keyStatus').textContent='';
+      gP('home');
     }
-    const d=await r.json();
-    addMsg('a',d.response);
-    aH(text,d.response);
-    if(prefs.as)aSav(d.response);
-  }catch(e){
+    throw new Error(msg);
+  }
+  const data=await res.json();
+  return data.choices[0].message.content;
+}
+
+// SEND MESSAGE
+async function doSend(text,len,btnId){
+  const btn=document.getElementById(btnId);btn.disabled=true;
+  gP('chat');
+  addMsg('u',text);
+  addTyping();
+  try{
+    const prompt=buildPrompt(text,len);
+    const reply=await callGroq(prompt);
+    removeTyping();
+    addMsg('a',reply);
+    aH(text,reply);
+    if(prefs.as)aSav(reply);
+  }catch(err){
     removeTyping();
     const sc=document.getElementById('cS');
-    const er=document.createElement('div');er.className='ebub';
-    er.innerHTML='❌ <b>Error:</b> '+e.message+'<br><small>Check your Groq API key in Settings or at console.groq.com</small>';
-    sc.appendChild(er);sc.scrollTop=sc.scrollHeight;
+    const e=document.createElement('div');
+    e.style.cssText='background:rgba(255,68,102,0.08);border:1px solid rgba(255,68,102,0.2);border-radius:12px;padding:12px 16px;color:#ff4466;font-size:13px;line-height:1.6';
+    e.innerHTML='<b>❌ Error:</b> '+err.message+'<br><small style="opacity:0.7">Go to Settings → Groq API Key to update your key, or get a free key at <a href="https://console.groq.com" target="_blank" style="color:#ff8899">console.groq.com</a></small>';
+    sc.appendChild(e);sc.scrollTop=sc.scrollHeight;
   }finally{btn.disabled=false}
 }
 
 function hGo(){const t=document.getElementById('hTxt').value.trim();if(!t){toast('Please enter something','er');return}document.getElementById('hTxt').value='';doSend(t,document.getElementById('hLen').value,'hB')}
 function cGo(){const t=document.getElementById('cTxt').value.trim();if(!t){toast('Please enter something','er');return}document.getElementById('cTxt').value='';doSend(t,document.getElementById('cLen').value,'cB')}
 
-// FORMAT
+// FORMAT RESPONSE
 function fmt(text){
   return text
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/```(\w*)\n?([\s\S]*?)```/g,'<pre><code>$2</code></pre>')
     .replace(/\*\*(.*?)\*\*/g,'<b>$1</b>')
     .replace(/\*(.*?)\*/g,'<em>$1</em>')
@@ -522,11 +611,10 @@ function fmt(text){
     .replace(/^## (.*$)/gm,'<h3>$1</h3>')
     .replace(/^- (.*$)/gm,'<li>$1</li>')
     .replace(/^(\d+)\. (.*$)/gm,'<li>$2</li>')
-    .replace(/(<li>.*<\/li>)/gs, s=>'<ul>'+s+'</ul>')
     .replace(/\n/g,'<br>');
 }
 
-// CHAT HELPERS
+// CHAT
 function addMsg(role,text){
   const sc=document.getElementById('cS');
   const d=document.createElement('div');d.className='msg '+role;
@@ -536,7 +624,7 @@ function addMsg(role,text){
     b.innerHTML=fmt(text);
     const ac=document.createElement('div');ac.className='bacts';
     const enc=encodeURIComponent(text);
-    ac.innerHTML=`<button class="bact" onclick="cpT(this,'${enc}')">📋 Copy</button><button class="bact" onclick="svT('${enc}')">💾 Save</button><button class="bact" onclick="newC()">🔄 New</button>`;
+    ac.innerHTML=`<button class="bact" onclick="cpT(this,'${enc}')">📋 Copy</button><button class="bact" onclick="svT('${enc}')">💾 Save</button><button class="bact" onclick="newC()">🔄 New Chat</button>`;
     b.appendChild(ac);
   }else{b.textContent=text}
   d.appendChild(av);d.appendChild(b);sc.appendChild(d);sc.scrollTop=sc.scrollHeight;
@@ -551,8 +639,8 @@ function newC(){document.getElementById('cS').innerHTML='';gP('home')}
 function aH(q,a){if(!user)return;hist.unshift({q:q.slice(0,100),a,t:new Date().toLocaleString()});if(hist.length>30)hist.pop();localStorage.setItem('_h_'+user.e,JSON.stringify(hist));rH()}
 function rH(){
   const el=document.getElementById('hiL');
-  if(!hist.length){el.innerHTML='<div class="emp"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><p>No conversations yet.</p></div>';return}
-  el.innerHTML=hist.map((h,i)=>`<div class="hi" onclick="lH(${i})"><div class="hico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div style="flex:1;min-width:0"><div class="hq">${h.q}${h.q.length>=100?'...':''}</div><div class="htm">${h.t}</div></div></div>`).join('');
+  if(!hist.length){el.innerHTML='<div class="emp"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><p>No conversations yet.<br>Start chatting!</p></div>';return}
+  el.innerHTML=hist.map((h,i)=>`<div class="hi" onclick="lH(${i})"><div class="hico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div style="flex:1;min-width:0"><div class="hq">${h.q.replace(/</g,'&lt;')}${h.q.length>=100?'...':''}</div><div class="htm">${h.t}</div></div></div>`).join('');
 }
 function lH(i){gP('chat');addMsg('u',hist[i].q);addMsg('a',hist[i].a)}
 function clrH(){hist=[];if(user)localStorage.removeItem('_h_'+user.e);rH();toast('History cleared','ok')}
@@ -561,13 +649,13 @@ function clrH(){hist=[];if(user)localStorage.removeItem('_h_'+user.e);rH();toast
 function aSav(text){if(!user)return;sav.unshift({t:text,dt:new Date().toLocaleString()});localStorage.setItem('_s_'+user.e,JSON.stringify(sav));rS()}
 function rS(){
   const el=document.getElementById('svG');
-  if(!sav.length){el.innerHTML='<div class="emp"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21l-8-7-8 7V5a2 2 0 012-2h12a2 2 0 012 2z"/></svg><p>No saved responses.<br>Click 💾 Save on any response.</p></div>';return}
-  el.innerHTML=sav.map((s,i)=>`<div class="svc"><div class="sct"><span class="svtg">Saved</span><button class="svdl" onclick="dSav(${i})"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><div class="svtx">${fmt(s.t)}</div><div style="font-size:11px;color:var(--mu2);margin-top:8px">${s.dt}</div></div>`).join('');
+  if(!sav.length){el.innerHTML='<div class="emp" style="grid-column:1/-1"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21l-8-7-8 7V5a2 2 0 012-2h12a2 2 0 012 2z"/></svg><p>No saved responses yet.<br>Click 💾 Save on any response.</p></div>';return}
+  el.innerHTML=sav.map((s,i)=>`<div class="svc"><div class="sct"><span class="svtg">Saved</span><button class="svdl" onclick="dSav(${i})" title="Delete"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div><div class="svtx">${fmt(s.t)}</div><div style="font-size:11px;color:var(--mu2);margin-top:8px">${s.dt}</div></div>`).join('');
 }
 function dSav(i){sav.splice(i,1);if(user)localStorage.setItem('_s_'+user.e,JSON.stringify(sav));rS();toast('Removed','ok')}
 function clrS(){sav=[];if(user)localStorage.removeItem('_s_'+user.e);rS();toast('Saved cleared','ok')}
 
-// SETTINGS TOGGLES
+// SETTINGS
 function tSet(k){prefs[k]=!prefs[k];document.getElementById(k==='as'?'tAS':'tNF').classList.toggle('on',prefs[k]);toast((k==='as'?'Auto-save':'Notifications')+' '+(prefs[k]?'on':'off'),'ok')}
 
 // AUTO LOGIN
