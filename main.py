@@ -12,7 +12,7 @@ if os.path.exists("static"):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "agent": "summarai", "model": "llama3-8b-8192"}
+    return {"status": "ok", "agent": "summarai", "model": "llama-3.1-8b-instant"}
 
 @app.get("/")
 async def root():
