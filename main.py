@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from agent import run_agent
 
-app = FastAPI()
+app = FastAPI(title="SummarAI Agent", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 class RunRequest(BaseModel):
@@ -17,7 +17,7 @@ class RunRequest(BaseModel):
 class RunResponse(BaseModel):
     response: str
     session_id: str
-    agent: str = "text_summarizer"
+    agent: str = "summarai"
 
 @app.post("/run", response_model=RunResponse)
 async def run(body: RunRequest):
@@ -30,13 +30,16 @@ async def run(body: RunRequest):
 
 @app.get("/health")
 async def health():
-    return {"status": "ok", "agent": "text_summarizer", "model": "gemini-2.0-flash"}
+    return {"status": "ok", "agent": "summarai", "model": "llama3-8b-8192", "provider": "groq"}
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+if os.path.exists("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def root():
-    return FileResponse("static/index.html")
+    if os.path.exists("static/index.html"):
+        return FileResponse("static/index.html")
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     import uvicorn

@@ -1,14 +1,45 @@
 import os
-from google import genai
+import urllib.request
+import urllib.error
+import json
 
-client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY", ""))
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 async def run_agent(user_input: str, session_id: str = "default") -> str:
     try:
-        response = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=user_input
+        payload = json.dumps({
+            "model": "llama3-8b-8192",
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a text summarization assistant. Summarize clearly and concisely. Start with **Summary:** then the summary. End with **Original word count:** X words."
+                },
+                {
+                    "role": "user",
+                    "content": user_input
+                }
+            ],
+            "temperature": 0.7,
+            "max_tokens": 1024
+        }).encode("utf-8")
+
+        req = urllib.request.Request(
+            GROQ_API_URL,
+            data=payload,
+            headers={
+                "Authorization": f"Bearer {GROQ_API_KEY}",
+                "Content-Type": "application/json"
+            },
+            method="POST"
         )
-        return response.text
+
+        with urllib.request.urlopen(req) as res:
+            data = json.loads(res.read().decode("utf-8"))
+            return data["choices"][0]["message"]["content"]
+
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode("utf-8")
+        return f"Error {e.code}: {error_body}"
     except Exception as e:
         return f"Error: {str(e)}"
