@@ -375,7 +375,7 @@ const users=JSON.parse(localStorage.getItem('_u')||'{}');
 function getKey(){return localStorage.getItem('_gk')||''}
 function saveKey(){
   const k=document.getElementById('kIn').value.trim();
-  if(!k||!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}
+  if(!k||!k.startsWith('gsk_')){toast('Please enter a valid API key','er');return}
   localStorage.setItem('_gk',k);
   document.getElementById('kbox').style.display='none';
   document.getElementById('stKey').value=k;
@@ -384,7 +384,7 @@ function saveKey(){
 }
 function saveKeyFromSett(){
   const k=document.getElementById('stKey').value.trim();
-  if(!k||!k.startsWith('gsk_')){toast('Key must start with gsk_','er');return}
+  if(!k||!k.startsWith('gsk_')){toast('Please enter a valid API key','er');return}
   localStorage.setItem('_gk',k);
   document.getElementById('kbox').style.display='none';
   document.getElementById('keyStatus').textContent='✓ Key saved';
@@ -545,14 +545,14 @@ async function callGroq(prompt){
     gP('home');
     throw new Error('Please add your Groq API key first');
   }
-  const res=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+  const res=await fetch('https://openrouter.ai/api/v1/chat/completions',{
     method:'POST',
     headers:{
       'Authorization':'Bearer '+key,
       'Content-Type':'application/json'
     },
     body:JSON.stringify({
-      model:'llama3-8b-8192',
+      model:'meta-llama/llama-3.1-8b-instruct:free',
       messages:[{role:'user',content:prompt}],
       temperature:0.7,
       max_tokens:2048
